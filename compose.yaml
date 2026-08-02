@@ -1,0 +1,6 @@
+services:
+  flock:
+    image: docker.io/juancsucoder/flock_env:latest
+    build:
+      context: .
+      dockerfile: Dockerfile

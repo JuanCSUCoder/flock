@@ -64,7 +64,7 @@ docker run -it --rm \
   -v ~/.config/opencode:/root/.config/opencode \
   -v \"\$(pwd):/worktree\" \
   -v \"\$(pwd)/../../../.git:\$(pwd)/../../../.git\" \
-  -v \"~/.local/share/opencode:/root/.local/share/opencode\" \
+  -v ~/.local/share/opencode:/root/.local/share/opencode \
   docker.io/juancsucoder/flock_env:latest --prompt \"You are now working in a new worktree for agent-\$1 located in /worktree. Modify the code as needed and commit your changes during the process. Also, when you're done, make a final commit to finalize your work. These are the guidelines, don't start working yet, wait for the user to give you instructions. When you finish, write a skill with the guidelines and structure you used to solve the task and make a commit.\"
 
 EOF"

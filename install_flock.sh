@@ -63,6 +63,7 @@ git worktree add .opencode/worktrees/agent-\$1 -b feature/agent-\$1
 cd .opencode/worktrees/agent-\$1
 
 docker run -it --rm \
+  --privileged \
   -v ~/.config/opencode:/home/agent/.config/opencode \
   -v \"\$(pwd):/home/agent/worktree\" \
   -v \"\$(pwd)/../../../.git:\$(pwd)/../../../.git\" \

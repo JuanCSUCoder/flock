@@ -6,6 +6,16 @@
 
 ---
 
+## Installation
+
+You can quickly install Flock using the official installation script:
+
+```bash
+curl -fsSL [https://juancsucoder.github.io/flock/install_flock.sh](https://juancsucoder.github.io/flock/install_flock.sh) | bash
+```
+
+---
+
 ## Core Architecture & Features
 
 * **Git Worktree Isolation**: Automatically creates dedicated Git worktrees and feature branches (`feature/agent-<name>`). This keeps all agent changes isolated on disk so you can easily review, test, and merge them into your main branch.

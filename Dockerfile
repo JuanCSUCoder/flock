@@ -14,6 +14,6 @@ RUN addgroup -g $USER_GID $USER_NAME \
 # Set the active user and home directory
 USER $USER_NAME
 
-WORKDIR /worktree
+WORKDIR /home/agent/worktree
 
 ENTRYPOINT [ "opencode" ]

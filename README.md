@@ -11,7 +11,7 @@
 You can quickly install Flock using the official installation script:
 
 ```bash
-curl -fsSL [https://juancsucoder.github.io/flock/install_flock.sh](https://juancsucoder.github.io/flock/install_flock.sh) | bash
+curl -fsSL https://juancsucoder.github.io/flock/install_flock.sh | bash
 ```
 
 ---

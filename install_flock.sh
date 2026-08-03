@@ -23,6 +23,8 @@ if [ -z \"\$1\" ]; then
     exit 1
 fi
 
+cd \"\$(git rev-parse --show-toplevel)\"
+
 mkdir -p .opencode/worktrees
 touch .opencode/worktrees/.gitkeep
 

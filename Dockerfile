@@ -1,7 +1,7 @@
 FROM ghcr.io/anomalyco/opencode
 
 # 1. Install CLI tools, docker, sudo, and doas
-RUN apk add --no-cache curl bash git docker iptables sudo doas
+RUN apk add --no-cache curl bash git docker docker-cli-compose iptables sudo doas
 
 ARG USER_NAME=agent
 ARG USER_UID=1000

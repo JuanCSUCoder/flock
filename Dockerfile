@@ -1,7 +1,7 @@
 FROM ghcr.io/anomalyco/opencode
 
-# 1. Install CLI tools including docker-cli
-RUN apk add --no-cache curl bash git docker iptables
+# 1. Install CLI tools, docker, sudo, and doas
+RUN apk add --no-cache curl bash git docker iptables sudo doas
 
 ARG USER_NAME=agent
 ARG USER_UID=1000
@@ -12,7 +12,11 @@ RUN addgroup -g $USER_GID $USER_NAME \
     && adduser -u $USER_UID -G $USER_NAME -s /bin/bash -D $USER_NAME \
     && addgroup $USER_NAME docker
 
-# 3. Pre-create directories and set ownership
+# 3. Configure passwordless sudo and doas for the agent user
+RUN echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
+    && echo "permit nopass $USER_NAME as root" > /etc/doas.conf
+
+# 4. Pre-create directories and set ownership
 RUN mkdir -p /home/agent/.local/state /home/agent/.local/share /home/agent/.config /home/agent/worktree \
     && chown -R $USER_UID:$USER_GID /home/agent
 

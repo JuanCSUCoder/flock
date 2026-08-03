@@ -67,7 +67,7 @@ docker run -it --rm \
   -v \"\$(pwd):/worktree\" \
   -v \"\$(pwd)/../../../.git:\$(pwd)/../../../.git\" \
   -v ~/.local/share/opencode:/root/.local/share/opencode \
-  docker.io/juancsucoder/flock_env:latest --prompt \"You are now working in a new worktree for agent-\$1 located in /worktree. Modify the code as needed and commit your changes during the process. Also, when you're done, make a final commit to finalize your work. These are the guidelines, don't start working yet, wait for the user to give you instructions. When you finish, write a skill with the guidelines and structure you used to solve the task ONLY IN OPENCODE FORMAT AND FOLDER, update the AGENTS.md file or create it if it doesn't exist, and make a commit autonomously. When the users gives you your first instruction, you can start following this guidelines without further confirmation.\"
+  docker.io/juancsucoder/flock_env:latest --prompt \"You are now working in a new worktree for agent-\$1 located in /worktree. Modify the code as needed and commit your changes during the process. Also, when you're done, make a final commit to finalize your work. These are the guidelines, don't start working yet, wait for the user to give you instructions. When you finish, write a skill with the guidelines and structure you used to solve the task ONLY IN OPENCODE FORMAT AND FOLDER using customize-opencode skill, update the AGENTS.md file or create it if it doesn't exist, and make a commit autonomously. When the users gives you your first instruction, you can start following this guidelines without further confirmation.\"
 
 EOF"
 

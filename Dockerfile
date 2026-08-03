@@ -1,7 +1,6 @@
-FROM juancsucoder/bun_opencode
+FROM ghcr.io/anomalyco/opencode
 
-RUN apk add git
-RUN git config --global user.name "Flock Agent" && git config --global user.email "agent@flock.local"
+RUN apk add --no-cache curl bash git
 
 ARG USER_NAME=agent
 ARG USER_UID=1000
@@ -15,5 +14,11 @@ RUN addgroup -g $USER_GID $USER_NAME \
 USER $USER_NAME
 
 WORKDIR /home/agent/worktree
+
+RUN curl -fsSL https://bun.sh/install | bash
+
+ENV PATH="/home/agent/.bun/bin:${PATH}"
+
+RUN git config --global user.name "Flock Agent" && git config --global user.email "agent@flock.local"
 
 ENTRYPOINT [ "opencode" ]

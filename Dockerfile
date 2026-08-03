@@ -31,4 +31,4 @@ ENV PATH="/home/agent/.bun/bin:${PATH}"
 
 RUN git config --global user.name "Flock Agent" && git config --global user.email "agent@flock.local"
 
-ENTRYPOINT ["/bin/sh", "-c", "dockerd >/dev/null 2>&1 & sleep 2 && exec opencode \"$@\"", "--"]
+ENTRYPOINT ["/bin/sh", "-c", "sudo -n dockerd --storage-driver=vfs >/dev/null 2>&1 & sleep 2 && exec opencode \"$@\"", "--"]

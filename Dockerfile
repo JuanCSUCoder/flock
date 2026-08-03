@@ -10,6 +10,9 @@ ARG USER_GID=1000
 RUN addgroup -g $USER_GID $USER_NAME \
     && adduser -u $USER_UID -G $USER_NAME -s /bin/sh -D $USER_NAME
 
+RUN mkdir -p /home/agent/.local/state /home/agent/.local/share /home/agent/.config /home/agent/worktree \
+    && chown -R $USER_UID:$USER_GID /home/agent
+
 # Set the active user and home directory
 USER $USER_NAME
 

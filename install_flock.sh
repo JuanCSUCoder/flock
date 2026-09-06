@@ -9,7 +9,7 @@ docker pull docker.io/juancsucoder/flock_env:latest
 
 # Define output path
 TARGET_DIR="/bin" # Or /usr/local/bin for system-wide (requires sudo)
-TARGET_FILE="$TARGET_DIR/flock"
+TARGET_FILE="$TARGET_DIR/flocker"
 
 # Ensure the destination directory exists
 sudo mkdir -p "$TARGET_DIR"

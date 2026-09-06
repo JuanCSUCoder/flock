@@ -1,14 +1,14 @@
-# Flock 🐦‍⬛
+# Flocker 🐦‍⬛
 
 > **Orchestrate parallel AI agents in isolated git worktrees.**
 
-**Flock** is a CLI tool designed to streamline multi-agent development workflows. It spins up containerized, branch-native execution environments using Docker and Git Worktrees—allowing AI agents to build, test, and commit code concurrently without polluting your local workspace or colliding with each other.
+**Flocker** is a CLI tool designed to streamline multi-agent development workflows. It spins up containerized, branch-native execution environments using Docker and Git Worktrees—allowing AI agents to build, test, and commit code concurrently without polluting your local workspace or colliding with each other.
 
 ---
 
 ## Installation
 
-You can quickly install Flock using the official installation script:
+You can quickly install Flocker using the official installation script:
 
 ```bash
 curl -fsSL https://juancsucoder.github.io/flock/install_flock.sh | bash
@@ -30,13 +30,13 @@ curl -fsSL https://juancsucoder.github.io/flock/install_flock.sh | bash
 To spin up an isolated containerized session for an agent, simply pass your desired session or task name to `flock`:
 
 ```bash
-flock test1
+flocker test1
 ```
 
 ### Example Terminal Output
 
 ```text
-❯ flock test1
+❯ flocker test1
 Line added to gitignore.
 Line added to gitignore.
 Preparing worktree (new branch 'feature/agent-test1')
@@ -54,7 +54,7 @@ HEAD is now at e0101ca Fix: Permissions
 
 ## Workflow Overview
 
-1. **Provision**: `flock` updates `.gitignore` and creates a local Git worktree for the requested session (`feature/agent-<session_name>`).
+1. **Provision**: `flocker` updates `.gitignore` and creates a local Git worktree for the requested session (`feature/agent-<session_name>`).
 2. **Containerize**: Spins up a Docker container, binding your host's local OpenCode configs/API keys and mounting the isolated worktree directory into the container.
 3. **Isolate**: Assigns a dedicated network bridge so agent-driven servers and services run in complete isolation from your machine's host network.
 4. **Review & Merge**: Inspect the generated commits and branch directly from your primary repository, then merge or iterate as needed.
